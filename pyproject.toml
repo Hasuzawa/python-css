@@ -1,9 +1,18 @@
 [tool.poetry]
-name = "color"
+name = "pycss"
 version = "0.1.0"
-description = ""
+description = "A simple library for converting values to RGB color."
+license = "Apache-2.0"
 authors = ["Hasuzawa <hasuzawa.yuichi.international@gmail.com>"]
+maintainers = ["Hasuzawa <hasuzawa.yuichi.international@gmail.com>"]
 readme = "README.md"
+homepage = "https://github.com/Hasuzawa/python-css"
+repository = "https://github.com/Hasuzawa/python-css"
+documentation = "https://github.com/Hasuzawa/python-css"
+include = [
+	{ path = "src", format = "sdist" }
+]
+
 
 [tool.poetry.dependencies]
 python = "^3.12"
