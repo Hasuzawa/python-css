@@ -3,7 +3,8 @@
 See details at
 TODO
 """
-from color import Color
+
+from ..color import Color
 
 Black = Color(0, 0, 0)
 Silver = Color(192, 192, 192)
@@ -11,7 +12,7 @@ Gray = Color(128, 128, 128)
 White = Color(255, 255, 255)
 Maroon = Color(128, 0, 0)
 Red = Color(255, 0, 0)
-Purple =Color(128, 0, 128)
+Purple = Color(128, 0, 128)
 Fuchsia = Color(255, 0, 255)
 Green = Color(0, 128, 0)
 Lime = Color(0, 255, 0)

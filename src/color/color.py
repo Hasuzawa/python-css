@@ -1,5 +1,3 @@
-from typing import overload
-
 from .conversion import hex2rgb
 
 
@@ -31,6 +29,14 @@ class Color:
     def alpha(self) -> float | None:
         return self._alpha
 
+    def tuple(self) -> tuple[int, int, int]:
+        """A tuple of 3 int of RGB values.
+
+        Returns:
+            A RGB tuple.
+        """
+        return self.r, self.g, self.b
+
     def hex(self, capitalized: bool = False) -> str:
         r = hex(self._r).lstrip("0x")
         g = hex(self._g).lstrip("0x")
@@ -41,8 +47,7 @@ class Color:
         return s
 
 
-@overload
-def rgb(
+def from_rgb(
     r: int,
     g: int,
     b: int,
@@ -52,25 +57,24 @@ def rgb(
     """Constructs and returns a `Color` with rgb values.
 
     Args:
-        r: Red value of RGB.
-        g: Green value of RGB.
-        b: Blue value of RGB.
+            r: Red value of RGB.
+            g: Green value of RGB.
+            b: Blue value of RGB.
 
     Returns:
-        A RGB color.
+            A RGB color.
     """
     return Color(r, g, b, alpha=alpha)
 
 
-@overload
-def rgb(hex: str) -> Color:
+def from_hex(hex: str) -> Color:
     """Constructs and returns a `Color` with hex string.
 
     Args:
-        hex: A hex string, e.g. #0d1a3f.
+            hex: A hex string, e.g. #0d1a3f.
 
     Returns:
-        A RGB color.
+            A RGB color.
     """
     r, g, b = hex2rgb(hex)
     return Color(r, g, b, alpha=None)
